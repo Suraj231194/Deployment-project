@@ -25,8 +25,17 @@ ensure_runtime_database() {
       ;;
   esac
 
-  mkdir -p "$(dirname "$sqlite_path")"
+  local sqlite_dir
+  sqlite_dir="$(dirname "$sqlite_path")"
+
+  mkdir -p "$sqlite_dir"
   touch "$sqlite_path"
+
+  # Apache serves requests as www-data, so both the database file and its directory
+  # must stay writable for SQLite journals and application writes.
+  chown -R www-data:www-data "$sqlite_dir"
+  chmod 775 "$sqlite_dir"
+  chmod 664 "$sqlite_path"
 }
 
 ensure_runtime_database

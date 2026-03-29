@@ -742,8 +742,8 @@ class ProductService
                 'created_at' => now(),
             ]);
         } catch (Throwable $exception) {
-            Log::error('Failed to log user product activity.', ['session_id' => $sessionId, 'user_id' => $user?->id, 'path' => $path, 'activity_type' => $activityType, 'error' => $exception->getMessage()]);
-            throw $exception;
+            // Browsing analytics should never break the storefront experience.
+            Log::warning('Failed to log user product activity.', ['session_id' => $sessionId, 'user_id' => $user?->id, 'path' => $path, 'activity_type' => $activityType, 'error' => $exception->getMessage()]);
         }
     }
 
