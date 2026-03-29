@@ -39,13 +39,16 @@ npm run build
 
 ensure_runtime_database
 
+db_connection="${DB_CONNECTION:-sqlite}"
+
 # Clear bootstrap caches that do not require the database.
 php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 
-if [ "${RUN_MIGRATE_FRESH_SEED:-false}" = "true" ]; then
-  # Explicit one-off reset path for demo/staging data rebuilds.
+if [ "$db_connection" = "sqlite" ] || [ "${RUN_MIGRATE_FRESH_SEED:-false}" = "true" ]; then
+  # SQLite on Render is demo-style local storage, so always rebuild it to a known-good seeded state.
+  # RUN_MIGRATE_FRESH_SEED remains available as an explicit override for other databases.
   php artisan migrate:fresh --seed --force
 else
   # Prepare the real Render database schema before the service boots.

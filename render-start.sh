@@ -31,13 +31,16 @@ ensure_runtime_database() {
 
 ensure_runtime_database
 
+db_connection="${DB_CONNECTION:-sqlite}"
+
 # Reset bootstrap artifacts that do not require the database so runtime env vars are used consistently.
 php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 
-if [ "${RUN_MIGRATE_FRESH_SEED:-false}" = "true" ]; then
-  # Explicit one-off reset path for demo/staging data rebuilds.
+if [ "$db_connection" = "sqlite" ] || [ "${RUN_MIGRATE_FRESH_SEED:-false}" = "true" ]; then
+  # SQLite on Render is demo-style local storage, so always rebuild it to a known-good seeded state.
+  # RUN_MIGRATE_FRESH_SEED remains available as an explicit override for other databases.
   php artisan migrate:fresh --seed --force
 else
   # Apply schema changes against the live Render database before serving traffic.
