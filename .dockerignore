@@ -1,0 +1,10 @@
+.git
+.vscode
+.vs
+node_modules
+vendor
+public/build
+public/hot
+.env
+.idea
+*.log
