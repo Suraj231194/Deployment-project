@@ -39,11 +39,16 @@ npm run build
 
 ensure_runtime_database
 
-# Clear caches
-php artisan optimize:clear
+# Clear bootstrap caches that do not require the database.
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
 
 # Prepare the real Render database schema before the service boots.
 php artisan migrate --force
+
+# Clear any remaining optimized artifacts now that the database tables exist.
+php artisan optimize:clear
 
 # Seed the reference data required by public routes and catalog pages.
 for seeder in \

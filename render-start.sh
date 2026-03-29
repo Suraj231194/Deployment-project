@@ -31,11 +31,16 @@ ensure_runtime_database() {
 
 ensure_runtime_database
 
-# Reset cached bootstrap artifacts so runtime env vars are used consistently.
-php artisan optimize:clear
+# Reset bootstrap artifacts that do not require the database so runtime env vars are used consistently.
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
 
 # Apply schema changes against the live Render database before serving traffic.
 php artisan migrate --force
+
+# Reset any remaining optimized artifacts now that the database schema exists.
+php artisan optimize:clear
 
 # Seed the shared reference data required by public pages and storefront flows.
 for seeder in \
