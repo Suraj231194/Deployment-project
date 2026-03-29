@@ -67,7 +67,7 @@
             linear-gradient(180deg, #ffffff 0%, #f9faf9 100%)"
     >
         <a href="{{ route('home') }}" class="shrink-0 xl:col-start-1">
-            <img src="{{ asset('upload/icons/biogenixlogo5.png') }}" alt="Biogenix Logo" width="120" height="64" decoding="async" class="h-12 w-auto xl:h-14 2xl:h-16">
+            <img src="{{ asset('upload/icons/biogenixlogo5.PNG') }}" alt="Biogenix Logo" width="120" height="64" decoding="async" class="h-12 w-auto xl:h-14 2xl:h-16">
         </a>
 
         {{-- Mobile hamburger --}}

@@ -44,25 +44,32 @@ php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 
-# Prepare the real Render database schema before the service boots.
-php artisan migrate --force
+if [ "${RUN_MIGRATE_FRESH_SEED:-false}" = "true" ]; then
+  # Explicit one-off reset path for demo/staging data rebuilds.
+  php artisan migrate:fresh --seed --force
+else
+  # Prepare the real Render database schema before the service boots.
+  php artisan migrate --force
 
-# Clear any remaining optimized artifacts now that the database tables exist.
+  # Clear any remaining optimized artifacts now that the database tables exist.
+  php artisan optimize:clear
+
+  # Seed the reference data required by public routes and catalog pages.
+  for seeder in \
+    RbacSeeder \
+    CompaniesSeeder \
+    CatalogSeeder \
+    EnquiryTypeSeeder \
+    FaqSeeder \
+    ProductTechnicalResourceSeeder \
+    QuizeSeeder \
+    SupportTicketCategorySeeder
+  do
+    php artisan db:seed --class="$seeder" --force
+  done
+fi
+
 php artisan optimize:clear
-
-# Seed the reference data required by public routes and catalog pages.
-for seeder in \
-  RbacSeeder \
-  CompaniesSeeder \
-  CatalogSeeder \
-  EnquiryTypeSeeder \
-  FaqSeeder \
-  ProductTechnicalResourceSeeder \
-  QuizeSeeder \
-  SupportTicketCategorySeeder
-do
-  php artisan db:seed --class="$seeder" --force
-done
 
 php artisan config:cache
 php artisan route:cache
