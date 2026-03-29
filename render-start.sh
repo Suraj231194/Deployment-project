@@ -1,23 +1,17 @@
 #!/usr/bin/env bash
-# exit on error
 set -o errexit
+set -o nounset
+set -o pipefail
 
-# Install PHP dependencies
-composer install --no-dev --optimize-autoloader
+cd /var/www/html
 
-# Install Node dependencies
-npm install
-
-# Build Node assets
-npm run build
-
-# Clear caches
+# Reset cached bootstrap artifacts so runtime env vars are used consistently.
 php artisan optimize:clear
 
-# Prepare the real Render database schema before the service boots.
+# Apply schema changes against the live Render database before serving traffic.
 php artisan migrate --force
 
-# Seed the reference data required by public routes and catalog pages.
+# Seed the shared reference data required by public pages and storefront flows.
 for seeder in \
   RbacSeeder \
   CompaniesSeeder \
@@ -34,3 +28,5 @@ done
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
+
+exec apache2-foreground
