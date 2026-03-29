@@ -1,0 +1,158 @@
+[
+  {
+    "id": "p1",
+    "name": "Hematology Analyzer X200",
+    "category": "Hematology",
+    "application": "Diagnostics",
+    "brand": "Biogenix",
+    "mrp": "₹2,50,000",
+    "image": "images/hema1.jpg",
+    "description": "High-precision hematology analyzer for labs.",
+    "specs": {
+      "Throughput": "60 tests/hour",
+      "Sample Volume": "20µL",
+      "Display": "7-inch LCD"
+    },
+    "brochure": "brochures/hema-x200.pdf"
+  },
+  {
+    "id": "p2",
+    "name": "Biochemistry Analyzer B500",
+    "category": "Biochemistry",
+    "application": "Pathology",
+    "brand": "Biogenix",
+    "mrp": "₹3,80,000",
+    "image": "images/bio1.jpg",
+    "description": "Fully automated biochemistry analyzer.",
+    "specs": {
+      "Tests": "120/hour",
+      "Cooling": "Yes",
+      "Connectivity": "LIS"
+    }
+  },
+  {
+    "id": "p3",
+    "name": "Digital X-Ray Machine DXR-1000",
+    "category": "Radiology",
+    "application": "Imaging",
+    "brand": "Biogenix",
+    "mrp": "₹15,00,000",
+    "image": "images/xray1.jpg",
+    "description": "High-resolution digital X-ray imaging system.",
+    "specs": {
+      "Detector Type": "Flat Panel",
+      "Resolution": "2048 x 2048 pixels",
+      "Power": "220V"
+    },
+    "brochure": "brochures/dxr-1000.pdf"
+  },
+  {
+    "id": "p4",
+    "name": "Ultrasound Machine UltraSound Pro",
+    "category": "Ultrasound",
+    "application": "Imaging",
+    "brand": "Biogenix",
+    "mrp": "₹8,50,000",
+    "image": "images/ultrasound1.jpg",
+    "description": "Advanced ultrasound system for detailed imaging.",
+    "specs": {
+      "Display": "15-inch Touchscreen",
+      "Probes": "Convex, Linear, Endocavitary",
+      "Modes": "2D, Doppler, M-Mode"
+    }
+  },
+  {
+    "id": "p5",
+    "name": "ECG Machine CardioMax 3000",
+    "category": "Cardiology",
+    "application": "Diagnostics",
+    "brand": "Biogenix",
+    "mrp": "₹1,20,000",
+    "image": "images/ecg1.jpg",
+    "description": "Portable ECG machine with advanced features.",
+    "specs": {
+      "Leads": "12-lead",
+      "Display": "5-inch LCD",
+      "Battery": "Rechargeable"
+    },
+    "brochure": "brochures/cardiomax-3000.pdf"
+  },
+    {
+    "id": "p6",
+    "name": "Hematology Testter",
+    "category": "Hematology",
+    "application": "Diagnostics",
+    "brand": "Biogenix",
+    "mrp": "₹2,50,000",
+    "image": "images/hema2.jpg",
+    "description": "High-precision hematology analyzer for labs.",
+    "specs": {
+      "Throughput": "60 tests/hour",
+      "Sample Volume": "20µL",
+      "Display": "7-inch LCD"
+    },
+    "brochure": "brochures/hema-x200.pdf"
+  },
+    {
+    "id": "p7",
+    "name": "Biochemistry Tester B500",
+    "category": "Biochemistry",
+    "application": "Pathology",
+    "brand": "Biogenix",
+    "mrp": "₹3,80,000",
+    "image": "images/bio1.jpg",
+    "description": "Fully automated biochemistry analyzer.",
+    "specs": {
+      "Tests": "120/hour",
+      "Cooling": "Yes",
+      "Connectivity": "LIS"
+    }
+  }, 
+  {
+    "id": "p8",
+    "name": "Digital X-Ray Machine DXR-1300",
+    "category": "Radiology",
+    "application": "Imaging",
+    "brand": "Biogenix",
+    "mrp": "₹15,00,000",
+    "image": "images/xray1.jpg",
+    "description": "High-resolution digital X-ray imaging system.",
+    "specs": {
+      "Detector Type": "Flat Panel",
+      "Resolution": "2048 x 2048 pixels",
+      "Power": "220V"
+    },
+    "brochure": "brochures/dxr-1000.pdf"
+  },
+  {
+    "id": "p9",
+    "name": "Ultrasound Machine UltraSound Pro UX",
+    "category": "Ultrasound",
+    "application": "Imaging",
+    "brand": "Biogenix",
+    "mrp": "₹8,50,000",
+    "image": "images/ultrasound1.jpg",
+    "description": "Advanced ultrasound system for detailed imaging.",
+    "specs": {
+      "Display": "15-inch Touchscreen",
+      "Probes": "Convex, Linear, Endocavitary",
+      "Modes": "2D, Doppler, M-Mode"
+    }
+  },
+  {
+    "id": "p10",
+    "name": "ECG Machine CardioMax 10000",
+    "category": "Cardiology",
+    "application": "Diagnostics",
+    "brand": "Biogenix",
+    "mrp": "₹1,20,000",
+    "image": "images/ecg1.jpg",
+    "description": "Portable ECG machine with advanced features.",
+    "specs": {
+      "Leads": "12-lead",
+      "Display": "5-inch LCD",
+      "Battery": "Rechargeable"
+    },
+    "brochure": "brochures/cardiomax-3000.pdf"
+  }
+]

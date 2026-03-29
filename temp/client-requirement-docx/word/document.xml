@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">
+  <w:body>
+    <w:p><w:r><w:rPr><w:b/></w:rPr><w:t>Biogenix Client Requirement Difference Table</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Date: 2026-03-17</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Source reviewed: Biogenix Discussion.ods, sheet Ques &amp; Ans</w:t></w:r></w:p>
+    <w:p><w:r><w:t>Overall verdict: The current system is partially aligned. The foundation for role and company pricing exists, but bulk pricing, coupon logic, quantity-rule split, and full priority handling are not implemented yet.</w:t></w:r></w:p>
+    <w:tbl>
+    <w:tblPr><w:tblBorders><w:top w:val="single" w:sz="8" w:space="0" w:color="auto"/><w:left w:val="single" w:sz="8" w:space="0" w:color="auto"/><w:bottom w:val="single" w:sz="8" w:space="0" w:color="auto"/><w:right w:val="single" w:sz="8" w:space="0" w:color="auto"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/></w:tblBorders></w:tblPr>
+    <w:tblGrid><w:gridCol w:w="700"/><w:gridCol w:w="3400"/><w:gridCol w:w="3400"/><w:gridCol w:w="1400"/><w:gridCol w:w="3600"/></w:tblGrid>
+    <w:tr>
+    <w:tc><w:p><w:r><w:rPr><w:b/></w:rPr><w:t>Row</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:rPr><w:b/></w:rPr><w:t>Client Requirement</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:rPr><w:b/></w:rPr><w:t>Current Support</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:rPr><w:b/></w:rPr><w:t>Status</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:rPr><w:b/></w:rPr><w:t>Minimum Backend Change</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>1</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Bulk discount configurable for all users, specific users, or roles</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Only preview UI exists. No backend bulk pricing model was found.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Add scoped bulk pricing records and resolve them in the backend pricing service.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>2</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Bulk discount with product discount should follow priority</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Current backend applies only the selected price row plus that row&apos;s own discount.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Extend pricing logic to apply bulk by rule priority.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>3</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Guest, B2C, B2B, and Company pricing with company first</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Company price already gets priority, but current price buckets do not match the exact four client terms.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Partially aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Map or simplify price buckets to the client pricing model.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>4</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Different min and max quantity for B2C and B2B</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Min, max, and lot size come only from the variant, so all users receive the same rule.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Add user-type-specific quantity rule storage and runtime resolution.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>5</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Priority should be Contract &gt; Coupon &gt; Bulk &gt; Product Discount &gt; Base</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Current backend supports company price first and one product discount only.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Build one final-price resolver that accepts user, quantity, and optional coupon.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>6</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Coupon applicability should depend on contract, bulk, and existing discount</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Coupon handling is frontend-only on checkout and is not part of backend pricing.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Add coupon master tables and backend applicability rules.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>7</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Bulk pricing should replace base price, not act as extra discount</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>No backend bulk pricing engine exists today.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Store bulk as quantity-based price rows instead of view-only display rules.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>8</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Use fixed priority instead of auto-selecting the lowest price</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Role and company pricing already follow a fixed order, but not the full client hierarchy.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Partially aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Extend fixed-priority logic to coupon, bulk, discount, and base layers.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    <w:tr>
+    <w:tc><w:p><w:r><w:t>9</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Min and max quantity should be configurable per product and per user type</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Quantity rules are variant-only and not user-type-specific.</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Not aligned</w:t></w:r></w:p></w:tc>
+    <w:tc><w:p><w:r><w:t>Add quantity-rule records by product or variant and by user type.</w:t></w:r></w:p></w:tc>
+    </w:tr>
+    </w:tbl>
+    <w:sectPr>
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1440" w:right="720" w:bottom="1440" w:left="720" w:header="708" w:footer="708" w:gutter="0"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@import './base/theme.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@layer base {
+    button, 
+    [role="button"],
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    summary,
+    a,
+    [onclick],
+    [data-action],
+    [data-answer] {
+        cursor: pointer;
+    }
+}

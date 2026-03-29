@@ -1,0 +1,38 @@
+[
+  {
+    "username": "admin@biogenix.com",
+    "password": "admin123",
+    "accountType": "admin",
+    "role": "employee"
+  },
+  {
+    "username": "user@biogenix.com",
+    "password": "user123",
+    "accountType": "customer",
+    "role": "customer"
+  },
+    {
+    "username": "dealer@biogenix.com",
+    "password": "dealer123",
+    "accountType": "customer",
+    "role": "dealer"
+  },
+   {
+    "username": "distributor@biogenix.com",
+    "password": "distributor123",
+    "accountType": "customer",
+    "role": "distributor"
+  },
+   {
+    "username": "labs@biogenix.com",
+    "password": "labs123",
+    "accountType": "customer",
+    "role": "labs"
+  },
+ {
+    "username": "hospital@biogenix.com",
+    "password": "hospital123",
+    "accountType": "customer",
+    "role": "hospital"
+  }
+]

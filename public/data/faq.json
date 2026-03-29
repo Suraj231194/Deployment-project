@@ -1,0 +1,50 @@
+[
+  {
+    "id": "company",
+    "title": "Company",
+    "image": "assets/images/faq-company.jpg",
+    "description": "Learn more about Biogenix, our history, and mission.",
+    "faqs": [
+      {
+        "question": "What does Biogenix specialize in?",
+        "answer": "Biogenix specializes in advanced healthcare diagnostics and laboratory equipment."
+      },
+      {
+        "question": "Where is Biogenix located?",
+        "answer": "Our headquarters are in Pune, Maharashtra, India."
+      }
+    ]
+  },
+  {
+    "id": "equipment",
+    "title": "Equipment",
+    "image": "assets/images/faq-equipment.jpg",
+    "description": "Information about our equipment and usage.",
+    "faqs": [
+      {
+        "question": "What types of equipment are available?",
+        "answer": "We provide Hematology Analyzers, IVD kits, Reagents, and more."
+      },
+      {
+        "question": "Do you provide maintenance?",
+        "answer": "Yes, we offer comprehensive maintenance and service contracts."
+      }
+    ]
+  },
+  {
+    "id": "delivery",
+    "title": "Delivery",
+    "image": "assets/images/faq-delivery.jpg",
+    "description": "Details about our delivery policies and logistics.",
+    "faqs": [
+      {
+        "question": "Do you provide same-day delivery?",
+        "answer": "Same-day delivery is available in selected cities like Lucknow."
+      },
+      {
+        "question": "How are products shipped?",
+        "answer": "Products are shipped via certified logistics partners ensuring safety and speed."
+      }
+    ]
+  }
+]

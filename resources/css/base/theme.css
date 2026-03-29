@@ -1,0 +1,101 @@
+@theme {
+    --font-sans: 'Manrope', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Sora', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+    /* Primary - Forest Green (#1A4D2E) */
+    --color-primary-50: #f0faf4;
+    --color-primary-100: #d1f0dd;
+    --color-primary-200: #a3e0bb;
+    --color-primary-500: #247a42;
+    --color-primary-600: #1A4D2E;
+    --color-primary-700: #133D23;
+    --color-primary-800: #0D2B19;
+    --color-primary-900: #091D11;
+    --color-primary-950: #051009;
+
+    /* Secondary - Yellow (#FDE047) */
+    --color-secondary-50: #fefce8;
+    --color-secondary-100: #fef9c3;
+    --color-secondary-200: #fef08a;
+    --color-secondary-500: #eab308;
+    --color-secondary-600: #FDE047;
+    --color-secondary-700: #a16207;
+    --color-secondary-800: #854d0e;
+
+    /* Tertiary - Maroon (#6A323B) */
+    --color-tertiary-50: #fdf2f4;
+    --color-tertiary-100: #f8d8dd;
+    --color-tertiary-200: #f0b0ba;
+    --color-tertiary-500: #8b3d48;
+    --color-tertiary-600: #6A323B;
+    --color-tertiary-700: #54272F;
+    --color-tertiary-800: #3E1C23;
+
+    /* Neutral - Gray (#757874) */
+    --color-neutral-50: #f7f7f7;
+    --color-neutral-100: #e5e5e4;
+    --color-neutral-200: #d4d4d3;
+    --color-neutral-500: #757874;
+    --color-neutral-600: #5c5f5b;
+    --color-neutral-700: #434543;
+    --color-neutral-800: #2c2d2b;
+
+    /* Brand Accents */
+    --color-accent-orange: #FF6A00;
+    --color-accent-navy: #07111F;
+    --color-accent-cyan: #38BDF8;
+
+    /* UI - Neutral tones (harmonized with green primary) */
+    --ui-page-bg: #f9faf9;
+    --ui-surface: #ffffff;
+    --ui-surface-muted: #f7f8f7;
+    --ui-surface-subtle: #f1f3f1;
+    --ui-border: #e0e2e0;
+    --ui-text: #1a1e1a;
+    --ui-text-muted: #6b706b;
+    --ui-radius-card: 2.5rem;
+    --ui-radius-field: 0.875rem;
+    --ui-radius-button: 0.875rem;
+    --ui-shadow-soft: 0 12px 28px rgba(26, 30, 26, 0.06);
+    --ui-shadow-card: 0 18px 42px rgba(26, 30, 26, 0.08);
+    --ui-shadow-panel: 0 28px 70px rgba(26, 30, 26, 0.1);
+    --ui-container-max: 100%;
+
+    /* Glassmorphism Classes */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-blur: 16px;
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(7, 17, 31, 0.1);
+
+    /* Animations & Interactions */
+    --transition-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+@utility glass-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ui-border);
+}
+
+@utility glow-orange {
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.4);
+}
+
+@utility hover-lift {
+    transition: transform 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium);
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--ui-shadow-card);
+    }
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
