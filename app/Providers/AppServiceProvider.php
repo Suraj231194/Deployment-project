@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use App\Http\Responses\LoginResponse as FortifyLoginResponse;
 use App\Http\Responses\RegisterResponse as FortifyRegisterResponse;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\RegisterResponse;
 
@@ -24,8 +26,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (env('APP_ENV') !== 'local') {
-            \Illuminate\Support\Facades\URL::forceScheme('https');
+        $request = request();
+        $appUrl = (string) config('app.url', '');
+        $forwardedProto = strtolower((string) $request->header('x-forwarded-proto', ''));
+        $requestHost = strtolower((string) $request->getHost());
+
+        // Render sits behind a proxy, so use the forwarded protocol and the configured app URL
+        // instead of relying only on APP_ENV when deciding whether generated asset URLs must be HTTPS.
+        $shouldForceHttps = $request->isSecure()
+            || Str::contains($forwardedProto, 'https')
+            || Str::startsWith($appUrl, 'https://')
+            || Str::endsWith($requestHost, '.onrender.com');
+
+        if ($shouldForceHttps) {
+            URL::forceScheme('https');
         }
     }
 }
