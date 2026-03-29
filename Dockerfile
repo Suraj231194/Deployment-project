@@ -46,8 +46,15 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 # Enable Apache mod_rewrite for Laravel routing
 RUN a2enmod rewrite
 
+# Create SQLite database and run migrations/seeders so the app works out of the box
+RUN touch /var/www/html/database/database.sqlite \
+    && chown www-data:www-data /var/www/html/database/database.sqlite \
+    && php artisan migrate --force \
+    && php artisan db:seed --force || true
+
 # Render provides a $PORT environment variable. Apache must listen on it instead of 80.
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+
 
 # Configure Apache start
 CMD ["apache2-foreground"]
